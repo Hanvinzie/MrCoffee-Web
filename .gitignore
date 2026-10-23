@@ -1,0 +1,26 @@
+# ============================================================
+# MrCoffee-Web — .gitignore
+# ============================================================
+
+# Python scripts (tidak perlu di-deploy ke production)
+*.py
+__pycache__/
+*.pyc
+*.pyo
+
+# Output kompresi gambar (generated, bukan source)
+dist/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node (jika ada di masa depan)
+node_modules/

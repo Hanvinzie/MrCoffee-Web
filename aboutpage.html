@@ -35,7 +35,10 @@
   <section class="ceo-hero">
     <div class="ceo-hero__bg">
       <!-- id="ceo-img" preserved (script.js references it on aboutpage) -->
-      <img src="assets/cafeownerimg.png" alt="Susanto Liman" id="ceo-img">
+      <picture>
+          <source srcset="dist/assets/cafeownerimg.webp" type="image/webp">
+          <img src="assets/cafeownerimg.png" alt="Susanto Liman" id="ceo-img">
+        </picture>
       <div class="ceo-hero__overlay"></div>
     </div>
     <div class="ceo-hero__content container">
@@ -127,7 +130,10 @@
 
   <!-- Hidden compat section — script.js doesn't reference these on aboutpage, kept for safety -->
   <section class="ceo" style="display:none" aria-hidden="true">
-    <img src="assets/cafeownerimg.png" alt="CEO">
+    <picture>
+          <source srcset="dist/assets/cafeownerimg.webp" type="image/webp">
+          <img src="assets/cafeownerimg.png" alt="CEO">
+        </picture>
     <h4>Susanto Liman</h4>
     <p>Connecting the world from a cup of coffee.</p>
   </section>
