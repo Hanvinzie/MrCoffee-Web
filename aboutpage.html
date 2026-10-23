@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -6,83 +7,138 @@
   <link rel="shortcut icon" href="assets/icon-mrcoffee.png" type="image/x-icon">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="about-body">
-  <header>
+<body>
+
+  <div class="greeting-bar">
+    <h2 id="typing-text" class="typing-greeting"></h2>
+  </div>
+  <!-- Navbar -->
+  <header class="site-header">
     <nav class="navbar">
-      <a href="index.html">
-        <img src="assets/logo-mrcoffee.png" alt="Coffee Logo" class="logo">
+      <a href="index.html" class="navbar__logo">
+        <img src="assets/logo-mrcoffee.png" alt="MR.COFFEE" class="logo">
       </a>
-      <ul>
+      <ul class="navbar__links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="rewardpage.html" class="active">Rewards</a></li>
-        <li><a href="aboutpage.html">About Us</a></li>
+        <li><a href="rewardpage.html">Rewards</a></li>
+        <li><a href="aboutpage.html" class="active">About Us</a></li>
         <li><a href="menupage.html">Menu</a></li>
-        <li><a href="orderpage.html">Order</a></li>
+        <li><a href="orderpage.html" class="navbar__cta">Order</a></li>
       </ul>
+      <button class="navbar__hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </nav>
   </header>
 
-  <section class="ceo">
-    <img id="ceo-img" src="assets/cafeownerimg.png" alt="CEO">
-    <h2>Susanto Liman</h2>
-    <p id="ceo-p">Susanto Liman started MR.COFFEE with a vision of connecting people through coffee.
-      His dream was to bring the joy of high-quality coffee to everyone, every day.
-      His passion and creativity made MR.COFFEE what it is today.</p>
+  <!-- CEO Hero — full-viewport with overlay -->
+  <section class="ceo-hero">
+    <div class="ceo-hero__bg">
+      <!-- id="ceo-img" preserved (script.js references it on aboutpage) -->
+      <img src="assets/cafeownerimg.png" alt="Susanto Liman" id="ceo-img">
+      <div class="ceo-hero__overlay"></div>
+    </div>
+    <div class="ceo-hero__content container">
+      <p class="section-eyebrow">Founder &amp; Visionary</p>
+      <h1 class="ceo-hero__name">Susanto<br><em>Liman</em></h1>
+      <!-- id="ceo-p" preserved for script.js -->
+      <p id="ceo-p" class="ceo-hero__bio">
+        Susanto Liman started MR.COFFEE with a vision of connecting people through coffee.
+        His dream was to bring the joy of high-quality coffee to everyone, every day.
+        His passion and creativity made MR.COFFEE what it is today.
+      </p>
+    </div>
   </section>
 
+  <!-- Mission & Vision -->
   <section class="mission-vision-story">
-    <h3>Our Mission</h3>
-    <p>1. To serve high-quality coffee that can be enjoyed by everyone, every day.
-    <p>2. To create a welcoming, creative, and inclusive space for people from all walks of life.</p> 
-    <p>3. To build lasting relationships with customers through memorable service and experience.</p>
-    <p>4. To leverage technology to share MR.COFFEE’s warmth beyond physical walls.</p>
-    <p>5. To support local farmers by sourcing coffee beans responsibly and sustainably.</p>
-    <h3>Our Vision</h3>
-    <p>To become the go-to coffee shop that brings flavor, stories, and meaningful connections to every corner of the world.</p>
-    <div class="timeline-container">
-      <h3>Company Story</h3>
-      <div class="timeline">
-        
-        <div class="timeline-block left">
-          <div class="content-box">
-            <h4>The Spark – 2015</h4>
-            <p>In a crowded city filled with routines, Susanto Liman found peace in a humble cup of coffee. Inspired by his love for meaningful conversations and creativity, he dreamed of creating a space where coffee could bring people together. MR.COFFEE started as an idea scribbled in a notebook during quiet late nights.</p>
-          </div>
-          <div class="dot"></div>
+    <div class="container">
+      <div class="mv-grid">
+
+        <div class="mv-card reveal">
+          <span class="mv-card__number">01</span>
+          <h3>Our Mission</h3>
+          <ul class="mv-list">
+            <li>Serve high-quality coffee that can be enjoyed by everyone, every day.</li>
+            <li>Create a welcoming, creative, and inclusive space for people from all walks of life.</li>
+            <li>Build lasting relationships through memorable service and experience.</li>
+            <li>Leverage technology to share MR.COFFEE's warmth beyond physical walls.</li>
+            <li>Support local farmers by sourcing coffee beans responsibly and sustainably.</li>
+          </ul>
         </div>
-    
-        <div class="timeline-block right">
-          <div class="content-box">
-            <h4>The First Cup – 2017</h4>
-            <p>After two years of planning and learning, the first MR.COFFEE shop opened its doors. With mismatched furniture, walls filled with customer doodles, and beans sourced from local farmers, the café quickly became a hidden gem for students, artists, and dreamers.</p>
-          </div>
-          <div class="dot"></div>
+
+        <div class="mv-card reveal">
+          <span class="mv-card__number">02</span>
+          <h3>Our Vision</h3>
+          <p>To become the go-to coffee shop that brings flavor, stories, and meaningful connections to every corner of the world.</p>
         </div>
-    
-        <div class="timeline-block left">
-          <div class="content-box">
-            <h4>Community Grows – 2020</h4>
-            <p>Despite challenges during the global pandemic, MR.COFFEE adapted by launching takeout and delivery services. More importantly, the café became a symbol of warmth and connection — even from a distance. Customers supported one another, and the brand grew stronger, united by shared cups and stories.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Company Story — Timeline -->
+  <section class="story-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Our Journey</p>
+        <h2 class="section-title">Company Story</h2>
+      </div>
+
+      <div class="timeline-container">
+        <div class="timeline">
+
+          <div class="timeline-block left reveal-left">
+            <div class="content-box">
+              <h4>The Spark — 2015</h4>
+              <p>In a crowded city filled with routines, Susanto Liman found peace in a humble cup of coffee. Inspired by his love for meaningful conversations and creativity, he dreamed of creating a space where coffee could bring people together. MR.COFFEE started as an idea scribbled in a notebook during quiet late nights.</p>
+            </div>
+            <div class="dot"></div>
           </div>
-          <div class="dot"></div>
-        </div>
-    
-        <div class="timeline-block right">
-          <div class="content-box">
-            <h4>Beyond the Café – 2025</h4>
-            <p>Today, MR.COFFEE embraces the digital age. With a fully functional website, mobile app, and reward system, the experience extends far beyond the walls of the café. Yet, its heart remains the same — a place where strangers become friends, one sip at a time.</p>
+
+          <div class="timeline-block right reveal-right">
+            <div class="content-box">
+              <h4>The First Cup — 2017</h4>
+              <p>After two years of planning and learning, the first MR.COFFEE shop opened its doors. With mismatched furniture, walls filled with customer doodles, and beans sourced from local farmers, the café quickly became a hidden gem for students, artists, and dreamers.</p>
+            </div>
+            <div class="dot"></div>
           </div>
-          <div class="dot"></div>
+
+          <div class="timeline-block left reveal-left">
+            <div class="content-box">
+              <h4>Community Grows — 2020</h4>
+              <p>Despite challenges during the global pandemic, MR.COFFEE adapted by launching takeout and delivery services. More importantly, the café became a symbol of warmth and connection — even from a distance. Customers supported one another, and the brand grew stronger, united by shared cups and stories.</p>
+            </div>
+            <div class="dot"></div>
+          </div>
+
+          <div class="timeline-block right reveal-right">
+            <div class="content-box">
+              <h4>Beyond the Café — 2025</h4>
+              <p>Today, MR.COFFEE embraces the digital age. With a fully functional website, mobile app, and reward system, the experience extends far beyond the walls of the café. Yet, its heart remains the same — a place where strangers become friends, one sip at a time.</p>
+            </div>
+            <div class="dot"></div>
+          </div>
+
         </div>
       </div>
     </div>
   </section>
 
-  </div>
-  <footer>
-    <p>&copy; 2025 MR.COFFEE. All rights reserved.</p>
+  <!-- Hidden compat section — script.js doesn't reference these on aboutpage, kept for safety -->
+  <section class="ceo" style="display:none" aria-hidden="true">
+    <img src="assets/cafeownerimg.png" alt="CEO">
+    <h4>Susanto Liman</h4>
+    <p>Connecting the world from a cup of coffee.</p>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="site-footer__copy">&copy; 2025 MR.COFFEE. All rights reserved.</p>
+    </div>
   </footer>
 
   <script src="script.js" defer></script>
+  <script type="module" src="animations.js"></script>
 </body>
 </html>

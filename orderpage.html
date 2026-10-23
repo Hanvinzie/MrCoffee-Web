@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,106 +8,159 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <header>
-      <nav class="navbar">
-        <a href="index.html">
-          <img src="assets/logo-mrcoffee.png" alt="Coffee Logo" class="logo">
-        </a>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="rewardpage.html" class="active">Rewards</a></li>
-          <li><a href="aboutpage.html">About Us</a></li>
-          <li><a href="menupage.html">Menu</a></li>
-          <li><a href="orderpage.html">Order</a></li>
-        </ul>
-      </nav>
-    </header>
 
-  <section class="order-form">
-    <h2>Place Your Order</h2>
-    <div class="form-row">
-      <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" id="name" placeholder="Your full name">
-      </div>
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" placeholder="you@gmail.com">
-      </div>
-      <div class="form-group">
-        <label for="address">Address:</label>
-        <textarea id="address" placeholder="Your address"></textarea>
-      </div>
-    </div>
-    
-    <div class="form-row">
-      <div class="form-group">
-        <label for="product">Product:</label>
-        <select id="product">  
-          <option value="">--Select--</option>
-          <option value="originalespresso">Original Espresso</option>
-          <option value="brownsugaroatmilk">Brown Sugar Oatmilk</option>
-          <option value="chocolatteorange">Chocolate Orange</option>
-          <option value="originalfrappe">Original Frappe</option>
-          <option value="matchafrappe">Matcha Frappe</option>
-          <option value="caramelfrappucino">Caramel Frappucino</option>
-          <option value="brewedcoffee">Brewed Coffee</option>
-          <option value="lowcaloriebrewed">Low Calorie Brewed</option>
-          <option value="caramelhazelnut">Caramel Hazelnut</option>
-          <option value="croissant">Croissant</option>
-          <option value="cromboloni">Cromboloni</option>
-          <option value="donut">Donut</option>
-          <option value="pretzel">Pretzel</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="addons">Add-ons:</label>
-        <select id="addons">        
-          <option value="">--Select--</option>
-          <option value="extra shot">Extra Shot</option>
-          <option value="whipped cream">Whipped Cream</option>
-          <option value="whipped cream">Soy Milk</option>
-          <option value="syrup">Syrup</option>
-          <option value="less sugar">Less Sugar</option>
-          <option value="extra ice">Extra Ice</option>
-          <option value="none">None</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="total">Item Price (Rp):</label>
-        <input type="text" id="total" placeholder="0" readonly>
-      </div>
-    </div>
-    
-      <button type="button" class="btn" onclick="handleAddToCart()">Add to Cart</button>
-    </form>
-    <div id="cart-section" class="cart-section">
-      <h3>Your Cart</h3>
-      <p id="empty-cart-message" class="empty-cart">Your cart is empty.</p>
-      <ul id="cart-items"></ul>
-      <button onclick="clearCart()" class="remove-btn" style="margin-top: 1em;">Clear Cart</button>
-      <p><strong>Total Items:</strong> <span id="cart-count">0</span></p>
-      <p><strong>Total Price (Rp):</strong> <span id="cart-total">0</span></p>
+  <div class="greeting-bar">
+    <h2 id="typing-text" class="typing-greeting"></h2>
+  </div>
+  <!-- Navbar -->
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="index.html" class="navbar__logo">
+        <img src="assets/logo-mrcoffee.png" alt="MR.COFFEE" class="logo">
+      </a>
+      <ul class="navbar__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="rewardpage.html">Rewards</a></li>
+        <li><a href="aboutpage.html">About Us</a></li>
+        <li><a href="menupage.html">Menu</a></li>
+        <li><a href="orderpage.html" class="navbar__cta active">Order</a></li>
+      </ul>
+      <button class="navbar__hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
 
-      <button id="orderNowBtn" type="button" class="btn">Order Now</button>
-
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-eyebrow">Craft Your Cup</p>
+      <h1 class="page-hero__title">Place Your<br><em>Order</em></h1>
+      <p class="page-hero__sub">Fresh, made-to-order — delivered to your door.</p>
     </div>
-    
   </section>
 
-  <div id="orderModal" class="modal">
+  <!-- Order Section -->
+  <section class="order-section">
+    <div class="container">
+      <div class="order-layout">
+
+        <!-- Order Form Card -->
+        <div class="order-form-card reveal">
+          <h3 class="order-form-card__title">Your Details</h3>
+
+          <!-- .order-form wraps the inputs — class preserved -->
+          <div class="order-form">
+
+            <!-- Row 1: Personal info — all IDs preserved for script.js -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Your full name" autocomplete="name">
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="you@example.com" autocomplete="email">
+              </div>
+              <div class="form-group">
+                <label for="address">Delivery Address</label>
+                <textarea id="address" placeholder="Your full delivery address" rows="3" autocomplete="street-address"></textarea>
+              </div>
+            </div>
+
+            <div class="order-form-card__title order-form-card__title--sm">Select Item</div>
+
+            <!-- Row 2: Product selection — all IDs preserved for script.js -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="product">Product</label>
+                <select id="product">
+                  <option value="">— Select Product —</option>
+                  <option value="originalespresso">Original Espresso</option>
+                  <option value="brownsugaroatmilk">Brown Sugar Oatmilk</option>
+                  <option value="chocolatteorange">Chocolate Orange</option>
+                  <option value="originalfrappe">Original Frappe</option>
+                  <option value="matchafrappe">Matcha Frappe</option>
+                  <option value="caramelfrappucino">Caramel Frappucino</option>
+                  <option value="brewedcoffee">Brewed Coffee</option>
+                  <option value="lowcaloriebrewed">Low Calorie Brewed</option>
+                  <option value="caramelhazelnut">Caramel Hazelnut</option>
+                  <option value="croissant">Croissant</option>
+                  <option value="cromboloni">Cromboloni</option>
+                  <option value="donut">Donut</option>
+                  <option value="pretzel">Pretzel</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="addons">Add-ons</label>
+                <select id="addons">
+                  <option value="">— No Add-ons —</option>
+                  <option value="extra shot">Extra Shot</option>
+                  <option value="whipped cream">Whipped Cream</option>
+                  <option value="soy milk">Soy Milk</option>
+                  <option value="syrup">Syrup</option>
+                  <option value="less sugar">Less Sugar</option>
+                  <option value="extra ice">Extra Ice</option>
+                  <option value="none">None</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="total">Item Price (Rp)</label>
+                <!-- readonly + id="total" preserved for script.js price auto-fill -->
+                <input type="text" id="total" placeholder="0" readonly>
+              </div>
+            </div>
+
+            <!-- Add to Cart — onclick preserved -->
+            <button type="button" class="btn btn--primary btn--full" onclick="handleAddToCart()">
+              Add to Cart
+            </button>
+
+          </div><!-- /.order-form -->
+        </div><!-- /.order-form-card -->
+
+        <!-- Cart Section — id="cart-section" + all inner IDs preserved for script.js -->
+        <div id="cart-section" class="cart-section reveal">
+          <h3>Your Cart</h3>
+          <!-- id="empty-cart-message" preserved -->
+          <p id="empty-cart-message" class="empty-cart">Your cart is empty.</p>
+          <!-- id="cart-items" preserved -->
+          <ul id="cart-items"></ul>
+          <div class="cart-summary">
+            <div class="cart-meta">
+              <!-- id="cart-count" + id="cart-total" preserved -->
+              <span>Items: <strong id="cart-count">0</strong></span>
+              <span>Total: <strong class="cart-total-amount">Rp&nbsp;<span id="cart-total">0</span></strong></span>
+            </div>
+            <!-- clearCart() onclick + .remove-btn class preserved -->
+            <button onclick="clearCart()" class="btn btn--ghost btn--sm remove-btn">Clear Cart</button>
+            <!-- id="orderNowBtn" preserved -->
+            <button id="orderNowBtn" type="button" class="btn btn--primary btn--full">Order Now</button>
+          </div>
+        </div>
+
+      </div><!-- /.order-layout -->
+    </div><!-- /.container -->
+  </section>
+
+  <!-- Order Modal — id="orderModal" + id="closeModal" preserved for script.js -->
+  <div id="orderModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="modal-content">
-      <span id="closeModal" class="close">&times;</span>
-      <h2>Order Received!</h2>
+      <!-- id="closeModal" preserved — script.js adds click handler to this -->
+      <button id="closeModal" class="modal-close" aria-label="Close modal">&times;</button>
+      <div class="modal-icon" aria-hidden="true">✓</div>
+      <h2 id="modalTitle">Order Received!</h2>
       <p>Thank you for your order! We will process it shortly.</p>
     </div>
   </div>
-  
-  <footer>
-    <p>&copy; 2025 MR.COFFEE. All rights reserved.</p>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="site-footer__copy">&copy; 2025 MR.COFFEE. All rights reserved.</p>
+    </div>
   </footer>
 
   <script src="script.js" defer></script>
+  <script type="module" src="animations.js"></script>
 </body>
 </html>

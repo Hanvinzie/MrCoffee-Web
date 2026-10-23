@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -8,111 +8,183 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="content">
-    <header>
-      <nav class="navbar">
-        <a href="index.html">
-          <img src="assets/logo-mrcoffee.png" alt="Coffee Logo" class="logo">
-        </a>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="rewardpage.html" class="active">Rewards</a></li>
-          <li><a href="aboutpage.html">About Us</a></li>
-          <li><a href="menupage.html">Menu</a></li>
-          <li><a href="orderpage.html">Order</a></li>
-        </ul>
-      </nav>
-    </header>
-<section class="greetings">
-  <h2 id="typing-text" class="typing-greeting"></h2>
-</section>
 
-  <section class="banner">
-    <img src="assets/bannerhome.png" alt="Coffee Banner">
-  </section>
-
-  <a href="menupage.html" class="btn-1">Explore Our Menu</a>
-
-  <section class="most-ordered">
-
-  <div class="slider-container">
-    <button class="nav left">&#10094;</button>
-    <div class="slider-track">
-      <!-- Duplicate last slide for infinite effect -->
-      <div class="slide"><img src="assets/slidebanner2.png" alt="Banner 4" /></div>
-      <!-- Main slides -->
-      <div class="slide"><img src="assets/slidebanner1.png" alt="Banner 1" /></div>
-      <div class="slide"><img src="assets/slidebanner4.png" alt="Banner 2" /></div>
-      <div class="slide"><img src="assets/slidebanner3.png" alt="Banner 3" /></div>
-      <div class="slide"><img src="assets/slidebanner2.png" alt="Banner 4" /></div>
-      <!-- Duplicate first slide for infinite effect -->
-      <div class="slide"><img src="assets/slidebanner1.png" alt="Banner 1" /></div>
-    </div>
-    <button class="nav right">&#10095;</button>
+  <!-- Greeting Bar — #typing-text preserved for script.js -->
+  <div class="greeting-bar">
+    <h2 id="typing-text" class="typing-greeting"></h2>
   </div>
-    <h3>Most Ordered</h3>
-    
-    <div class="product-list">
-      <div class="product-card">
-        <img src="assets/coffee-with-frothing-pouring-from-espresso-machine.jpg" alt="Espresso">
-        <h4>Espresso</h4>
-        <p>Rp25.000</p>
-        <a href="orderpage.html" class="btn">Order Now</a>
+
+  <!-- Navbar -->
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="index.html" class="navbar__logo">
+        <img src="assets/logo-mrcoffee.png" alt="MR.COFFEE" class="logo">
+      </a>
+      <ul class="navbar__links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="rewardpage.html">Rewards</a></li>
+        <li><a href="aboutpage.html">About Us</a></li>
+        <li><a href="menupage.html">Menu</a></li>
+        <li><a href="orderpage.html" class="navbar__cta">Order</a></li>
+      </ul>
+      <button class="navbar__hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Hero Section — full-width editorial layout -->
+  <section class="hero">
+    <div class="hero__content">
+      <p class="hero__eyebrow">Est. 2017 — Jakarta</p>
+      <h1 class="hero__title">Every sip<br><em>tells a story.</em></h1>
+      <p class="hero__subtitle">Specialty coffee crafted for those who appreciate the art of a perfect brew.</p>
+      <div class="hero__actions">
+        <a href="menupage.html" class="btn btn--primary">Explore Our Menu</a>
+        <a href="orderpage.html" class="btn btn--ghost">Order Now</a>
       </div>
-      <div class="product-card">
-        <img src="assets/aromatic-frappuccino-table.jpg" alt="Frappe">
-        <h4>Frappe</h4>
-        <p>Rp30.000</p>
-        <a href="orderpage.html" class="btn">Order Now</a>
-      </div>
-      <div class="product-card">
-          <img src="assets/french-croissants-cardboard-box-cloth.jpg" alt="Croissant">
-          <h4>Croissant</h4>
-          <p>Rp20.000</p>
-          <a href="orderpage.html" class="btn">Order Now</a>  
-        </div>
-        <div class="product-card" data-category="bread">
-          <img src="assets/cromboloni.jpg" alt="Cromboloni">
-          <h4>Cromboloni</h4>
-          <p>Rp25.000</p>
-          <a href="orderpage.html" class="btn">Order Now</a>  
-        </div>
-        <div class="product-card" data-category="bread">
-          <img src="assets/Maple Glazed Donuts [1_5 Hours] – Chasety.jpg" alt="Donut">
-          <h4>Donut</h4>
-          <p>Rp12.000</p>
-          <a href="orderpage.html" class="btn">Order Now</a>
-        </div>
+    </div>
+    <div class="hero__bg">
+      <img src="assets/bannerhome.png" alt="" aria-hidden="true">
+      <div class="hero__bg-overlay"></div>
     </div>
   </section>
 
+  <!-- Most Ordered Section -->
+  <section class="most-ordered">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Customer Favorites</p>
+        <h2 class="section-title">Most Ordered</h2>
+      </div>
+
+      <!-- Slider — all classes preserved for script.js -->
+      <div class="slider-container reveal">
+        <button class="nav left">&#10094;</button>
+        <div class="slider-track">
+          <!-- Duplicate last slide for infinite effect -->
+          <div class="slide"><img src="assets/slidebanner2.png" alt="Banner 4" /></div>
+          <!-- Main slides -->
+          <div class="slide"><img src="assets/slidebanner1.png" alt="Banner 1" /></div>
+          <div class="slide"><img src="assets/slidebanner4.png" alt="Banner 2" /></div>
+          <div class="slide"><img src="assets/slidebanner3.png" alt="Banner 3" /></div>
+          <div class="slide"><img src="assets/slidebanner2.png" alt="Banner 4" /></div>
+          <!-- Duplicate first slide for infinite effect -->
+          <div class="slide"><img src="assets/slidebanner1.png" alt="Banner 1" /></div>
+        </div>
+        <button class="nav right">&#10095;</button>
+      </div>
+
+      <!-- Product Cards — .product-card + data-category preserved for script.js -->
+      <div class="product-list">
+        <div class="product-card" data-category="espresso">
+          <div class="product-card__img-wrap">
+            <img src="assets/coffee-with-frothing-pouring-from-espresso-machine.jpg" alt="Espresso">
+          </div>
+          <div class="product-card__body">
+            <h4>Espresso</h4>
+            <p class="product-card__price">Rp25.000</p>
+            <a href="orderpage.html" class="btn btn--card">Order Now</a>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="frappe">
+          <div class="product-card__img-wrap">
+            <img src="assets/aromatic-frappuccino-table.jpg" alt="Frappe">
+          </div>
+          <div class="product-card__body">
+            <h4>Frappe</h4>
+            <p class="product-card__price">Rp30.000</p>
+            <a href="orderpage.html" class="btn btn--card">Order Now</a>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="bread">
+          <div class="product-card__img-wrap">
+            <img src="assets/french-croissants-cardboard-box-cloth.jpg" alt="Croissant">
+          </div>
+          <div class="product-card__body">
+            <h4>Croissant</h4>
+            <p class="product-card__price">Rp20.000</p>
+            <a href="orderpage.html" class="btn btn--card">Order Now</a>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="bread">
+          <div class="product-card__img-wrap">
+            <img src="assets/cromboloni.jpg" alt="Cromboloni">
+          </div>
+          <div class="product-card__body">
+            <h4>Cromboloni</h4>
+            <p class="product-card__price">Rp25.000</p>
+            <a href="orderpage.html" class="btn btn--card">Order Now</a>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="bread">
+          <div class="product-card__img-wrap">
+            <img src="assets/Maple Glazed Donuts [1_5 Hours] – Chasety.jpg" alt="Donut">
+          </div>
+          <div class="product-card__body">
+            <h4>Donut</h4>
+            <p class="product-card__price">Rp12.000</p>
+            <a href="orderpage.html" class="btn btn--card">Order Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rewards Highlight -->
   <section class="rewards-highlight">
-    <img src="assets/promo-banner.png" alt="Reward" class="rewardsbanner">
-  
-    <div class="split-container">
-      <div class="split-image">
-        <img src="assets/reward-section.png" alt="Gambar">
+    <div class="rewards-highlight__inner container">
+      <div class="rewards-highlight__image reveal">
+        <img src="assets/reward-section.png" alt="Rewards App">
       </div>
-      <div class="split-content">
-        <h3>Get Our Exclusive Rewards</h3>
-        <p>You can get our exclusive rewards by download our apps on Google Play Store or on Apps Store.</p>
-        <a href="rewardpage.html" class="btn-rwd">See All Rewards</a>
+      <div class="rewards-highlight__content reveal">
+        <p class="section-eyebrow">Exclusive Benefits</p>
+        <h2>Get Our<br><em>Exclusive Rewards</em></h2>
+        <p>Download our app on Google Play Store or App Store and start earning rewards with every order.</p>
+        <a href="rewardpage.html" class="btn btn--primary">See All Rewards</a>
       </div>
     </div>
   </section>
 
-  <h3>Meet Our Founder</h3>
-  <section class="ceo">
+  <!-- CEO Teaser -->
+  <section class="ceo-teaser">
+    <div class="container">
+      <div class="ceo-teaser__inner reveal">
+        <div class="ceo-teaser__image">
+          <img src="assets/cafeownerimg.png" alt="Susanto Liman — Founder of MR.COFFEE">
+        </div>
+        <div class="ceo-teaser__content">
+          <p class="section-eyebrow">Meet Our Founder</p>
+          <h2>Susanto Liman</h2>
+          <p>Connecting the world from a cup of coffee. Let's discover his story.</p>
+          <a href="aboutpage.html" class="btn btn--primary">Learn More About Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       BACKWARD COMPATIBILITY — Hidden sections for script.js
+       script.js doesn't actually read these, but kept for safety.
+       ============================================================ -->
+  <section class="ceo" style="display:none" aria-hidden="true">
     <img src="assets/cafeownerimg.png" alt="CEO">
     <h4>Susanto Liman</h4>
-    <p>Connecting the world from a cup of coffee. Let's discover his story.</p>
+    <p>Connecting the world from a cup of coffee.</p>
     <a href="aboutpage.html" class="btn-au">Learn More About Us</a>
   </section>
-  </div>
-  <footer>
-    <p>&copy; 2025 MR.COFFEE. All rights reserved.</p>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="site-footer__copy">&copy; 2025 MR.COFFEE. All rights reserved.</p>
+    </div>
   </footer>
 
   <script src="script.js" defer></script>
+  <script type="module" src="animations.js"></script>
 </body>
 </html>

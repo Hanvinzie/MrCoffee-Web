@@ -1,85 +1,139 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MR.COFFEE - Rewards</title>
-  <link class="icon-web" rel="shortcut icon" href="assets/icon-mrcoffee.png" type="image/x-icon">
+  <link rel="shortcut icon" href="assets/icon-mrcoffee.png" type="image/x-icon">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
+
+  <div class="greeting-bar">
+    <h2 id="typing-text" class="typing-greeting"></h2>
+  </div>
+  <!-- Navbar -->
+  <header class="site-header">
     <nav class="navbar">
-      <a href="index.html">
-        <img src="assets/logo-mrcoffee.png" alt="Coffee Logo" class="logo">
+      <a href="index.html" class="navbar__logo">
+        <img src="assets/logo-mrcoffee.png" alt="MR.COFFEE" class="logo">
       </a>
-      <ul>
+      <ul class="navbar__links">
         <li><a href="index.html">Home</a></li>
         <li><a href="rewardpage.html" class="active">Rewards</a></li>
         <li><a href="aboutpage.html">About Us</a></li>
         <li><a href="menupage.html">Menu</a></li>
-        <li><a href="orderpage.html">Order</a></li>
+        <li><a href="orderpage.html" class="navbar__cta">Order</a></li>
       </ul>
+      <button class="navbar__hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </nav>
   </header>
 
-  <section class="rewards-highlight2">
-    <div class="split-container">
-      <div class="split-image">
-        <img src="assets/reward-section.png" alt="Gambar">
+  <!-- Download App Section -->
+  <section class="download-section">
+    <div class="container download-section__inner">
+
+      <div class="download-section__image reveal">
+        <img src="assets/reward-section.png" alt="MR.COFFEE App Preview">
       </div>
-      <div class="split-content">
-        <h3>Download Our App</h3>
-        <p>You can get our exclusive rewards by download our apps on Google Play Store or on Apps Store.</p>
-        <a href="https://play.google.com/store/games?hl=id">
-          <img class="download-img" src="assets/google-playlogo.png" alt="Google Play">
-        </a>
-        <a href="https://www.apple.com/id/app-store/">
-          <img class="download-img" src="assets/app-storelogo.png" alt="App Store">
-        </a>
+
+      <div class="download-section__content reveal">
+        <p class="section-eyebrow">Mobile App</p>
+        <h1 class="download-section__title">Download<br><em>Our App</em></h1>
+        <p>Get exclusive rewards, track your points, and unlock special offers by downloading our app on Google Play Store or App Store.</p>
+        <div class="download-buttons">
+          <a href="https://play.google.com/store/games?hl=id" class="download-btn" target="_blank" rel="noopener">
+            <img src="assets/google-playlogo.png" alt="Get it on Google Play">
+          </a>
+          <a href="https://www.apple.com/id/app-store/" class="download-btn" target="_blank" rel="noopener">
+            <img src="assets/app-storelogo.png" alt="Download on the App Store">
+          </a>
+        </div>
       </div>
+
     </div>
-    <img src="assets/promo-banner.png" alt="Reward" class="rewardsbanner">
   </section>
 
-  <section class="rewards-list">
-    <h3>Check Our Limited Offer</h3>
-    <div class="reward-items-container">
-      <div class="reward-item">
-        <img src="assets/CouponImg1.png" alt="Reward 1" class="exclusive-banner">
-        <h4>Buy 10 Get 1</h4>
-        <p>Buy 10 cups and get 1 free!</p>
-        <button onclick="promptAppDownload()">Claim on App</button>
+  <!-- Promo Banner -->
+  <div class="promo-banner-wrap">
+    <img src="assets/promo-banner.png" alt="MR.COFFEE Promotions" class="promo-banner-img rewardsbanner">
+  </div>
+
+  <!-- Rewards List — promptAppDownload() onclick preserved -->
+  <section class="rewards-section">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Limited Time</p>
+        <h2 class="section-title">Exclusive Offers</h2>
       </div>
-      <div class="reward-item">
-        <img src="assets/CouponImg2.png" alt="Reward 2" class="exclusive-banner">
-        <h4>Weekend Special Offer</h4>
-        <p>Up to 30% OFF on Weekend!</p>
-        <button onclick="promptAppDownload()">Claim on App</button>
-      </div>
-      <div class="reward-item">
-        <img src="assets/CouponImg3.png" alt="Reward 3" class="exclusive-banner">
-        <h4>New Customer Offer</h4>
-        <p>20% OFF Your First Order!</p>
-        <button onclick="promptAppDownload()">Claim on App</button>
-      </div>
-      <div class="reward-item">
-        <img src="assets/CouponImg4.png" alt="Reward 4" class="exclusive-banner">
-        <h4>Buy 1 Get 1 Free</h4>
-        <p>Limited buy 1 get 1 offer!</p>
-        <button onclick="promptAppDownload()">Claim on App</button>
-      </div>
-      <div class="reward-item">
-        <img src="assets/CouponImg5.png" alt="Reward 5" class="exclusive-banner">
-        <h4>4 + 1 Promo</h4>
-        <p>Buy 4 cups, get 1 pastry for free!</p>
-        <button onclick="promptAppDownload()">Claim on App</button>
+
+      <!-- .rewards-list + .reward-items-container preserved for script.js -->
+      <div class="rewards-list reward-items-container">
+
+        <div class="reward-item">
+          <div class="reward-item__badge">HOT DEAL</div>
+          <img src="assets/CouponImg1.png" alt="Buy 10 Get 1 Free" class="exclusive-banner">
+          <div class="reward-item__body">
+            <h4>Buy 10 Get 1</h4>
+            <p>Buy 10 cups and get 1 free!</p>
+            <button onclick="promptAppDownload()" class="reward-claim-btn">Claim on App</button>
+          </div>
+        </div>
+
+        <div class="reward-item">
+          <div class="reward-item__badge">WEEKEND</div>
+          <img src="assets/CouponImg2.png" alt="Weekend Special Offer" class="exclusive-banner">
+          <div class="reward-item__body">
+            <h4>Weekend Special</h4>
+            <p>Up to 30% OFF on Weekend!</p>
+            <button onclick="promptAppDownload()" class="reward-claim-btn">Claim on App</button>
+          </div>
+        </div>
+
+        <div class="reward-item">
+          <div class="reward-item__badge">NEW USER</div>
+          <img src="assets/CouponImg3.png" alt="New Customer Offer" class="exclusive-banner">
+          <div class="reward-item__body">
+            <h4>New Customer Offer</h4>
+            <p>20% OFF Your First Order!</p>
+            <button onclick="promptAppDownload()" class="reward-claim-btn">Claim on App</button>
+          </div>
+        </div>
+
+        <div class="reward-item">
+          <div class="reward-item__badge">LIMITED</div>
+          <img src="assets/CouponImg4.png" alt="Buy 1 Get 1 Free" class="exclusive-banner">
+          <div class="reward-item__body">
+            <h4>Buy 1 Get 1 Free</h4>
+            <p>Limited buy 1 get 1 offer!</p>
+            <button onclick="promptAppDownload()" class="reward-claim-btn">Claim on App</button>
+          </div>
+        </div>
+
+        <div class="reward-item">
+          <div class="reward-item__badge">BUNDLE</div>
+          <img src="assets/CouponImg5.png" alt="4+1 Promo" class="exclusive-banner">
+          <div class="reward-item__body">
+            <h4>4 + 1 Promo</h4>
+            <p>Buy 4 cups, get 1 pastry free!</p>
+            <button onclick="promptAppDownload()" class="reward-claim-btn">Claim on App</button>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
-  <footer>
-    <p>&copy; 2025 MR.COFFEE. All rights reserved.</p>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="site-footer__copy">&copy; 2025 MR.COFFEE. All rights reserved.</p>
+    </div>
   </footer>
 
   <script src="script.js" defer></script>
+  <script type="module" src="animations.js"></script>
 </body>
 </html>

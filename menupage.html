@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,117 +8,225 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
+
+  <div class="greeting-bar">
+    <h2 id="typing-text" class="typing-greeting"></h2>
+  </div>
+  <!-- Navbar -->
+  <header class="site-header">
     <nav class="navbar">
-      <a href="index.html">
-        <img src="assets/logo-mrcoffee.png" alt="Coffee Logo" class="logo">
+      <a href="index.html" class="navbar__logo">
+        <img src="assets/logo-mrcoffee.png" alt="MR.COFFEE" class="logo">
       </a>
-      <ul>
+      <ul class="navbar__links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="rewardpage.html" class="active">Rewards</a></li>
+        <li><a href="rewardpage.html">Rewards</a></li>
         <li><a href="aboutpage.html">About Us</a></li>
-        <li><a href="menupage.html">Menu</a></li>
-        <li><a href="orderpage.html">Order</a></li>
+        <li><a href="menupage.html" class="active">Menu</a></li>
+        <li><a href="orderpage.html" class="navbar__cta">Order</a></li>
       </ul>
+      <button class="navbar__hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </nav>
   </header>
 
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-eyebrow">What We Serve</p>
+      <h1 class="page-hero__title">Our Menu</h1>
+      <p class="page-hero__sub">From bold espressos to refreshing frappes — crafted with passion.</p>
+    </div>
+  </section>
+
+  <!-- Filter Bar — sticky, filterMenu() onclick preserved -->
   <section class="menu-filter">
-    <h2>Our Menu</h2>
-    <div class="filter-buttons">
-      <button onclick="filterMenu('')">All</button>
-      <button onclick="filterMenu('espresso')">Espresso</button>
-      <button onclick="filterMenu('frappe')">Frappe</button>
-      <button onclick="filterMenu('brewed')">Brewed</button>
-      <button onclick="filterMenu('bread')">Bread</button>
+    <div class="container">
+      <div class="filter-buttons">
+        <button onclick="filterMenu('')"          class="filter-btn active-filter" data-filter="">All</button>
+        <button onclick="filterMenu('espresso')"  class="filter-btn" data-filter="espresso">Espresso</button>
+        <button onclick="filterMenu('frappe')"    class="filter-btn" data-filter="frappe">Frappe</button>
+        <button onclick="filterMenu('brewed')"    class="filter-btn" data-filter="brewed">Brewed</button>
+        <button onclick="filterMenu('bread')"     class="filter-btn" data-filter="bread">Bread</button>
+      </div>
     </div>
   </section>
 
-  <section class="menu-items" id="menuItems">
-    <div class="product-card" data-category="espresso">
-      <img src="assets/coffee-with-frothing-pouring-from-espresso-machine.jpg" alt="Espresso">
-      <h4>Original Espresso</h4>
-      <p>Rp25.000</p>
-      <a href="orderpage.html" class="btn">Order Now</a>
-    </div>
-    <div class="product-card" data-category="espresso">
-      <img src="assets/brownsugar-oat.jpg" alt="Espresso">
-      <h4>Brown Sugar Oatmilk</h4>
-      <p>Rp28.000</p>
-      <a href="orderpage.html" class="btn">Order Now</a>
-    </div>
-    <div class="product-card" data-category="espresso">
-      <img src="assets/darkchoco-orange.jpg" alt="Espresso">
-      <h4>Chocolatte Orange</h4>
-      <p>Rp30.000</p>
-      <a href="orderpage.html" class="btn">Order Now</a>
-    </div>
-    <div class="product-card" data-category="frappe">
-      <img src="assets/aromatic-frappuccino-table.jpg" alt="Frappe">
-      <h4>Original Frappe</h4>
-      <p>Rp30.000</p>
-      <a href="orderpage.html" class="btn">Order Now</a>
-    </div>
-    <div class="product-card" data-category="frappe">
-      <img src="assets/matcha-frappe.jpg" alt="Frappe">
-      <h4>Matcha Frappe</h4>
-      <p>Rp35.000</p>
-      <a href="orderpage.html" class="btn">Order Now</a>
-    </div>
-    <div class="product-card" data-category="frappe">
-      <img src="assets/caramel-frappucino.jpg" alt="Frappe">
-      <h4>Caramel Frappucino</h4>
-      <p>Rp35.000</p>
-      <a href="orderpage.html" class="btn">Order Now</a>
-    </div>
-  <div class="product-card" data-category="brewed">
-      <img src="assets/front-view-coffee-poured-glass.jpg" alt="Brewed">
-      <h4>Brewed Coffee</h4>
-      <p>Rp20.000</p>
-      <a href="orderpage.html" class="btn">Order Now</a>
-    </div>
-    <div class="product-card" data-category="brewed">
-      <img src="assets/lowcal-brew.jpg" alt="Brewed">
-      <h4>Low Calorie Brewed</h4>
-      <p>Rp20.000</p>
-      <a href="orderpage.html" class="btn">Order Now</a>
-    </div>
-    <div class="product-card" data-category="brewed">
-      <img src="assets/caramel-hazelnut.jpg" alt="Brewed">
-      <h4>Caramel Hazelnut</h4>
-      <p>Rp28.000</p>
-      <a href="orderpage.html" class="btn">Order Now</a>
-    </div>
-  <div class="product-card" data-category="bread">
-      <img src="assets/french-croissants-cardboard-box-cloth.jpg" alt="Croissant">
-      <h4>Croissant</h4>
-      <p>Rp20.000</p>
-      <a href="orderpage.html" class="btn">Order Now</a>  
-    </div>
-    <div class="product-card" data-category="bread">
-      <img src="assets/cromboloni.jpg" alt="Cromboloni">
-      <h4>Cromboloni</h4>
-      <p>Rp25.000</p>
-      <a href="orderpage.html" class="btn">Order Now</a>  
-    </div>
-    <div class="product-card" data-category="bread">
-      <img src="assets/Maple Glazed Donuts [1_5 Hours] – Chasety.jpg" alt="Donut">
-      <h4>Donut</h4>
-      <p>Rp12.000</p>
-      <a href="orderpage.html" class="btn">Order Now</a>
-    </div>
-    <div class="product-card" data-category="bread">
-      <img src="assets/top-view-pretzels-breakfast.jpg" alt="Pretzel">
-      <h4>Pretzel</h4>
-      <p>Rp20.000</p>
-      <a href="orderpage.html" class="btn">Order Now</a> 
+  <!-- Menu Grid — #menuItems + .product-card + data-category preserved -->
+  <section class="menu-grid">
+    <div class="container">
+      <div class="menu-items product-list" id="menuItems">
+
+        <!-- ESPRESSO -->
+        <div class="product-card menu-item" data-category="espresso">
+          <div class="product-card__img-wrap">
+            <img src="assets/coffee-with-frothing-pouring-from-espresso-machine.jpg" alt="Original Espresso">
+          </div>
+          <div class="product-card__body">
+            <h4>Original Espresso</h4>
+            <p class="product-card__price">Rp25.000</p>
+            <a href="orderpage.html" class="btn btn--card">Order Now</a>
+          </div>
+        </div>
+
+        <div class="product-card menu-item" data-category="espresso">
+          <div class="product-card__img-wrap">
+            <img src="assets/brownsugar-oat.jpg" alt="Brown Sugar Oatmilk">
+          </div>
+          <div class="product-card__body">
+            <h4>Brown Sugar Oatmilk</h4>
+            <p class="product-card__price">Rp28.000</p>
+            <a href="orderpage.html" class="btn btn--card">Order Now</a>
+          </div>
+        </div>
+
+        <div class="product-card menu-item" data-category="espresso">
+          <div class="product-card__img-wrap">
+            <img src="assets/darkchoco-orange.jpg" alt="Chocolatte Orange">
+          </div>
+          <div class="product-card__body">
+            <h4>Chocolatte Orange</h4>
+            <p class="product-card__price">Rp30.000</p>
+            <a href="orderpage.html" class="btn btn--card">Order Now</a>
+          </div>
+        </div>
+
+        <!-- FRAPPE -->
+        <div class="product-card menu-item" data-category="frappe">
+          <div class="product-card__img-wrap">
+            <img src="assets/aromatic-frappuccino-table.jpg" alt="Original Frappe">
+          </div>
+          <div class="product-card__body">
+            <h4>Original Frappe</h4>
+            <p class="product-card__price">Rp30.000</p>
+            <a href="orderpage.html" class="btn btn--card">Order Now</a>
+          </div>
+        </div>
+
+        <div class="product-card menu-item" data-category="frappe">
+          <div class="product-card__img-wrap">
+            <img src="assets/matcha-frappe.jpg" alt="Matcha Frappe">
+          </div>
+          <div class="product-card__body">
+            <h4>Matcha Frappe</h4>
+            <p class="product-card__price">Rp35.000</p>
+            <a href="orderpage.html" class="btn btn--card">Order Now</a>
+          </div>
+        </div>
+
+        <div class="product-card menu-item" data-category="frappe">
+          <div class="product-card__img-wrap">
+            <img src="assets/caramel-frappucino.jpg" alt="Caramel Frappucino">
+          </div>
+          <div class="product-card__body">
+            <h4>Caramel Frappucino</h4>
+            <p class="product-card__price">Rp35.000</p>
+            <a href="orderpage.html" class="btn btn--card">Order Now</a>
+          </div>
+        </div>
+
+        <!-- BREWED -->
+        <div class="product-card menu-item" data-category="brewed">
+          <div class="product-card__img-wrap">
+            <img src="assets/front-view-coffee-poured-glass.jpg" alt="Brewed Coffee">
+          </div>
+          <div class="product-card__body">
+            <h4>Brewed Coffee</h4>
+            <p class="product-card__price">Rp20.000</p>
+            <a href="orderpage.html" class="btn btn--card">Order Now</a>
+          </div>
+        </div>
+
+        <div class="product-card menu-item" data-category="brewed">
+          <div class="product-card__img-wrap">
+            <img src="assets/lowcal-brew.jpg" alt="Low Calorie Brewed">
+          </div>
+          <div class="product-card__body">
+            <h4>Low Calorie Brewed</h4>
+            <p class="product-card__price">Rp20.000</p>
+            <a href="orderpage.html" class="btn btn--card">Order Now</a>
+          </div>
+        </div>
+
+        <div class="product-card menu-item" data-category="brewed">
+          <div class="product-card__img-wrap">
+            <img src="assets/caramel-hazelnut.jpg" alt="Caramel Hazelnut">
+          </div>
+          <div class="product-card__body">
+            <h4>Caramel Hazelnut</h4>
+            <p class="product-card__price">Rp28.000</p>
+            <a href="orderpage.html" class="btn btn--card">Order Now</a>
+          </div>
+        </div>
+
+        <!-- BREAD -->
+        <div class="product-card menu-item" data-category="bread">
+          <div class="product-card__img-wrap">
+            <img src="assets/french-croissants-cardboard-box-cloth.jpg" alt="Croissant">
+          </div>
+          <div class="product-card__body">
+            <h4>Croissant</h4>
+            <p class="product-card__price">Rp20.000</p>
+            <a href="orderpage.html" class="btn btn--card">Order Now</a>
+          </div>
+        </div>
+
+        <div class="product-card menu-item" data-category="bread">
+          <div class="product-card__img-wrap">
+            <img src="assets/cromboloni.jpg" alt="Cromboloni">
+          </div>
+          <div class="product-card__body">
+            <h4>Cromboloni</h4>
+            <p class="product-card__price">Rp25.000</p>
+            <a href="orderpage.html" class="btn btn--card">Order Now</a>
+          </div>
+        </div>
+
+        <div class="product-card menu-item" data-category="bread">
+          <div class="product-card__img-wrap">
+            <img src="assets/Maple Glazed Donuts [1_5 Hours] – Chasety.jpg" alt="Donut">
+          </div>
+          <div class="product-card__body">
+            <h4>Donut</h4>
+            <p class="product-card__price">Rp12.000</p>
+            <a href="orderpage.html" class="btn btn--card">Order Now</a>
+          </div>
+        </div>
+
+        <div class="product-card menu-item" data-category="bread">
+          <div class="product-card__img-wrap">
+            <img src="assets/top-view-pretzels-breakfast.jpg" alt="Pretzel">
+          </div>
+          <div class="product-card__body">
+            <h4>Pretzel</h4>
+            <p class="product-card__price">Rp20.000</p>
+            <a href="orderpage.html" class="btn btn--card">Order Now</a>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
-  <footer>
-    <p>&copy; 2025 MR.COFFEE. All rights reserved.</p>
+  <footer class="site-footer">
+    <div class="container">
+      <p class="site-footer__copy">&copy; 2025 MR.COFFEE. All rights reserved.</p>
+    </div>
   </footer>
 
   <script src="script.js" defer></script>
+
+  <!-- Active filter button visual state -->
+  <script>
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active-filter'));
+        btn.classList.add('active-filter');
+      });
+    });
+  </script>
+
+  <script type="module" src="animations.js"></script>
 </body>
 </html>
